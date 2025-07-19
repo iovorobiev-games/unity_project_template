@@ -19,3 +19,26 @@ The project also contains CI/CD pipeline which is configured to:
 
 * Build web unity build for every commit in the repo
 * Publish the build on itch.io
+
+## Setting up CI/CD
+
+For successfully building and publishing the game to itch following needs to be set up:
+
+### Secrets
+
+For building the projects unity secrets need to be set up. Read more on the [Builder docs](https://game.ci/docs/github/builder/)
+
+* UNITY_EMAIL - email used to authorize in the unity hub
+* UNITY_PASSWORD - corresponding password
+* UNITY_LICENSE - contents of .ulf file. In case license is already activated, it should be located in C:/Program Data/Unity folder by default
+
+For publishing to itch following secrets should be set up:
+
+* BUTLER_CREDENTIALS - the key, used by butler to authenticate. Read more on the [Butler docs](https://itch.io/docs/butler/login.html)
+
+And the following variables:
+
+* Itch_User - username of the itch account where the game should be published
+* Itch_Game - the name of the game as stated on the itch.io page
+
+NOTE: the game page must be setup beforehand, otherwise nothing will be published.

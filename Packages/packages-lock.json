@@ -7,6 +7,21 @@
       "dependencies": {},
       "hash": "f213ff497e4ff462a77319cf677cf20cc0860ca9"
     },
+    "com.gameanalytics.sdk": {
+      "version": "7.10.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.google.external-dependency-manager": "1.2.168"
+      },
+      "url": "https://package.openupm.com"
+    },
+    "com.google.external-dependency-manager": {
+      "version": "file:D:/useful_stuff/com.google.external-dependency-manager-1.2.186.tgz",
+      "depth": 0,
+      "source": "local-tarball",
+      "dependencies": {}
+    },
     "com.luca3317.tmpeffects": {
       "version": "https://github.com/Luca3317/TMPEffects.git?path=/Package",
       "depth": 0,

@@ -57,8 +57,8 @@ jobs:
         uses: Ayowel/butler-to-itch@v1
         with:
           butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
-          itch_user: $ITCH_USER
-          itch_game: $ITCH_GAME
+          itch_user: ${{ vars.ITCH_USER }}
+          itch_game: ${{ vars.ITCH_GAME }}
           version: ${{ github.ref_name }}
           files: |
                    build/html.zip

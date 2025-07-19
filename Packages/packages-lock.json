@@ -17,7 +17,7 @@
       "url": "https://package.openupm.com"
     },
     "com.google.external-dependency-manager": {
-      "version": "file:D:/useful_stuff/com.google.external-dependency-manager-1.2.186.tgz",
+      "version": "file:com.google.external-dependency-manager-1.2.186.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {}

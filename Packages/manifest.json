@@ -2,7 +2,7 @@
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.gameanalytics.sdk": "7.10.4",
-    "com.google.external-dependency-manager": "file:D:/useful_stuff/com.google.external-dependency-manager-1.2.186.tgz",
+    "com.google.external-dependency-manager": "file:com.google.external-dependency-manager-1.2.186.tgz",
     "com.luca3317.tmpeffects": "https://github.com/Luca3317/TMPEffects.git?path=/Package",
     "com.unity.collab-proxy": "2.8.2",
     "com.unity.feature.2d": "2.0.1",

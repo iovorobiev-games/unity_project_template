@@ -5,8 +5,10 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  release:
-    types: [ "published" ]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -44,18 +46,3 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-
-      # Zip release build
-      - uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r build/html.zip  build/WebGL
-
-      - name: Upload to itch
-        uses: Ayowel/butler-to-itch@v1
-        with:
-          butler_key: ${{ secrets.BUTLER_CREDENTIALS }}
-          itch_user: $ITCH_USER
-          itch_game: $ITCH_GAME
-          version: ${{ github.ref_name }}
-          files: |
-                   build/html.zip

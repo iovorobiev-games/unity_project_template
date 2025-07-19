@@ -21,9 +21,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Print env variables
-      - name: Print env variables
-        run: echo "$ITCH_USER $ITCH_GAME"
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v4

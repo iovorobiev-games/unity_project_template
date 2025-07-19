@@ -1,4 +1,4 @@
-# Unity Project Template 
+# Unity Project Template
 
 This project is created for faster prototyping, when new project with the same setup needs to be created for yet another prototype.
 
@@ -14,6 +14,7 @@ The project sets up libraries:
 The project also contains set of utilities, which for now includes:
 
 * Bridge between unitask and clicks on game objects, which allows to await click if needed
+* Trivial Service Locator framework 
 
 The project also contains CI/CD pipeline which is configured to:
 
@@ -28,17 +29,18 @@ For successfully building and publishing the game to itch following needs to be 
 
 For building the projects unity secrets need to be set up. Read more on the [Builder docs](https://game.ci/docs/github/builder/)
 
-* UNITY_EMAIL - email used to authorize in the unity hub
-* UNITY_PASSWORD - corresponding password
-* UNITY_LICENSE - contents of .ulf file. In case license is already activated, it should be located in C:/Program Data/Unity folder by default
+* UNITY\_EMAIL - email used to authorize in the unity hub
+* UNITY\_PASSWORD - corresponding password
+* UNITY\_LICENSE - contents of .ulf file. In case license is already activated, it should be located in C:/Program Data/Unity folder by default
 
 For publishing to itch following secrets should be set up:
 
-* BUTLER_CREDENTIALS - the key, used by butler to authenticate. Read more on the [Butler docs](https://itch.io/docs/butler/login.html)
+* BUTLER\_CREDENTIALS - the key, used by butler to authenticate. Read more on the [Butler docs](https://itch.io/docs/butler/login.html)
 
 And the following variables:
 
-* Itch_User - username of the itch account where the game should be published
-* Itch_Game - the name of the game as stated on the itch.io page
+* Itch\_User - username of the itch account where the game should be published
+* Itch\_Game - the name of the game as stated on the itch.io page
 
 NOTE: the game page must be setup beforehand, otherwise nothing will be published.
+

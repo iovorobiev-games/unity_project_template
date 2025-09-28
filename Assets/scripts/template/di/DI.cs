@@ -8,6 +8,8 @@ namespace DefaultNamespace
     // DI class holds all the scopes the game uses.
     public class DI {
         public static Scope globalScope = new();
+
+        public static Scope sceneScope = new();
     }
 
     // Scope holds all the instantiated variables and controls their lifecycle.
@@ -37,7 +39,7 @@ namespace DefaultNamespace
         {
             Debug.Log("Registering " + o.GetType());
             var storedDict = storedWithKey.GetValueOrDefault(o.GetType(), new());
-            storedDict.Add(key, o);
+            storedDict[key] = o;
             storedWithKey[o.GetType()] = storedDict;
         }
 

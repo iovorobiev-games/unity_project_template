@@ -27,7 +27,7 @@ For successfully building and publishing the game to itch following needs to be 
 
 ### Secrets
 
-For building the projects unity secrets need to be set up. For building the projects unity secrets need to be set up. You can find how to setup secrets in [github docs](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).  Read more on why the unity credentials are needed in the [Builder docs](https://game.ci/docs/github/builder/)
+For building the projects unity secrets need to be set up. You can find how to setup secrets in [github docs](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).  Read more on why the unity credentials are needed in the [Builder docs](https://game.ci/docs/github/builder/)
 
 * UNITY\_EMAIL - email used to authorize in the unity hub
 * UNITY\_PASSWORD - corresponding password

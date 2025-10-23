@@ -13,27 +13,36 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # Cleanup
+  cleanup_project:
+    uses: iovorobiev-games/unity_project_template/.github/workflows/cleanup.yml@main
+  
   # This workflow contains a single job called "build"
-  build_deploy:
-    name: Build project
+  checkout:
+    name: Checkout project
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    needs: cleanup_project
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Cleanup
-      - name: cleanup project
-        uses: iovorobiev-games/unity_project_template/.github/workflows/cleanup.yml@main
-
       # Checkout
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           lfs: true
-          
-      - name: build project
-        uses: ./.github/workflows/build_action.yml
 
+  build:
+    uses: ./.github/workflows/build_action.yml
+    needs: checkout
+  
+  deploy:
+    name: Deploy project
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    needs: build
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
       # Zip release build
       - name: Zip
         run: sudo zip -r build/html.zip  build/WebGL

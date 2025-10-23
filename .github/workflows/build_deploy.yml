@@ -32,7 +32,7 @@ jobs:
           lfs: true
           
       - name: build project
-        uses: ./.github/workflows/build.yml
+        uses: ./.github/workflows/build_action.yml
 
       # Zip release build
       - name: Zip

@@ -15,7 +15,16 @@ on:
   
   # Allows to reuse this workflow in other workflows
   workflow_call:
-    
+    secrets: 
+      UNITY_LICENSE:
+        required: true
+        type: string
+      UNITY_EMAIL:
+        required: true
+        type: string
+      UNITY_PASSWORD:
+        required: true
+        type: string
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"

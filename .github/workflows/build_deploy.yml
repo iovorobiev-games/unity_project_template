@@ -21,6 +21,16 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Cleanup
+      - name: cleanup project
+        uses: iovorobiev-games/unity_project_template/.github/workflows/cleanup.yml@main
+
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          
       - name: build project
         uses: ./.github/workflows/build.yml
 

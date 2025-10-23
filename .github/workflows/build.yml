@@ -88,17 +88,13 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
-          
-      # Zip release build
-      - name: Zip
-        run: sudo zip -r build/html${{ github.head_ref }}.${{ github.sha }}.zip  build/WebGL
     
       # Upload build
       - name: Upload build
         uses: actions/upload-artifact@v4
         with:
-          name: build
-          path: build/html${{ github.head_ref }}.${{ github.sha }}.zip
+          name: html${{ github.head_ref }}.${{ github.sha }}
+          path: build/WebGL
           retention-days: 1
           overwrite: true
 

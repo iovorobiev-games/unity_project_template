@@ -33,7 +33,7 @@ jobs:
       
       # Zip release build
       - name: Zip
-        run: sudo zip -r artifacts/${{ github.head_ref }}.${{ github.sha }}.zip  artifacts/WebGL && ls -R artifacts/ && ls ./
+        run: sudo zip -r artifacts/html${{ github.head_ref }}.${{ github.sha }}.zip  artifacts/WebGL && ls -R artifacts/ && ls ./
             
       - name: Upload to itch
         uses: Ayowel/butler-to-itch@v1

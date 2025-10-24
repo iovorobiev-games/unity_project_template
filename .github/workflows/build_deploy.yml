@@ -31,11 +31,10 @@ jobs:
           name: html${{ github.head_ref }}.${{ github.sha }}
           path: ./artifacts
       
-      - name: Rename artifact
-        run: |
-          ls -R ./artifacts
-          for file in ./artifacts/*.zip; do [ -f "$file" ] && mv "$file" "./artifacts/html${{ github.head_ref }}.${{ github.sha }}.zip" && ls -R ./artifacts && break; done  
-          
+      # Zip release build
+      - name: Zip
+        run: sudo zip -r artifacts/${{ github.head_ref }}.${{ github.sha }}.zip  artifacts/WebGL
+            
       - name: Upload to itch
         uses: Ayowel/butler-to-itch@v1
         with:
@@ -44,4 +43,4 @@ jobs:
           itch_game: ${{ vars.ITCH_GAME }}
           version: ${{ github.ref_name }}
           files: |
-            ./artifacts/html${{ github.head_ref }}.${{ github.sha }}.zip
+            artifacts/html${{ github.head_ref }}.${{ github.sha }}.zip
